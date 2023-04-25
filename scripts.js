@@ -1,5 +1,34 @@
+const send = document.querySelector(".send");
+const inputName = document.getElementById("name");
+const inputCell = document.getElementById("telefone");
+const inputEmail = document.getElementById("email");
+const inputTextarea = document.getElementById("message");
 
-/* abre e fecha o menu ao clicar no ícone */
+send.addEventListener('click', () => {
+  if (inputName.value == "" || inputCell.value == "" || inputEmail.value == "" || inputTextarea.value == "" || !inputName.value || !inputCell.value || !inputEmail.value || !inputTextarea.value) {
+    return Toastify({
+      text: "Preencha todos os campos",
+      duration: 1500,
+      className: "info",
+      style: {
+        background: "red",
+        borderRadius: "8px"
+      }
+    }).showToast();
+  } else {
+    document.querySelector(".form").submit();
+    Toastify({
+      text: "Mensagem enviada com sucesso",
+      duration: 1500,
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        borderRadius: "8px"
+      }
+    }).showToast();
+  }
+});
+
 const nav = document.querySelector('#header nav')
 const toggle = document.querySelectorAll('nav .toggle')
 
@@ -7,9 +36,8 @@ for (const element of toggle) {
   element.addEventListener('click', function () {
     nav.classList.toggle('show')
   })
-} // acrescenta ou retira a classe show do nav
+}
 
-/* esconde o menu ao clicar em algum item dele */
 const links = document.querySelectorAll('nav ul li a')
 
 for (const link of links) {
