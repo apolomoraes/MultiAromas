@@ -21,7 +21,7 @@ img {
   font-size: 100%;
   --header-height: 4.5rem;
 
-  --hue: 780;
+  --hue: 480;
   --base-color: hsl(var(--hue) 36% 57%);
   --base-color-second: hsl(var(--hue) 65% 88%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
@@ -66,13 +66,14 @@ h3.tittle {
   display: inline-flex;
   align-items: center;
   padding: 0 2rem;
-  border-radius: 0.25rem;
+  border-radius: 8px;
   font: 500 1rem var(--body-font);
   transition: background 0.3s;
 }
 
-.button:hover {
-  background: var(--base-color-alt);
+.button:hover,
+.send:hover {
+  background-color: var(--base-color-alt);
 }
 
 .divider-1 {
@@ -438,20 +439,17 @@ nav.show .icon-close {
 
 .form button {
   padding: 1rem;
-  background-color: hsla(var(--hue), 100%, 21%, 25%);
+  background-color: var(--base-color);
   margin-top: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  color: var(--text-color-light);
 
   font-family: 'DM Sans';
   font-weight: bold;
 
   transition: 400ms;
-}
-
-.form button:hover {
-  background-color: hsla(var(--hue), 100%, 14%, 35%);
 }
 
 #contact {
