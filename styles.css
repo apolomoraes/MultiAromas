@@ -260,10 +260,15 @@ nav.show .icon-close {
   color: var(--base-color);
 }
 
-#home {
-  background-image: url(./assets/backgroundHome.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+#home img {
+  position: absolute;
+  height: auto;
+  min-height: 32rem;
+  width: 100%;
+  top: -5rem;
+  max-height: 45rem;
+
+  object-fit: cover;
 }
 
 #home {
@@ -332,7 +337,7 @@ nav.show .icon-close {
 }
 
 .divider-2 {
-  height: 1px;
+  height: 2px;
   background: linear-gradient(270deg,
       hsla(var(--hue), 65%, 88%, 0.34) 0%,
       hsla(var(--hue), 36%, 57%, 1) 100%
@@ -343,6 +348,14 @@ nav.show .icon-close {
 
 .cards.grid {
   gap: 1.5rem;
+}
+
+.cards svg path {
+  fill: var(--base-color-second);
+}
+
+.cards svg {
+  width: 6rem;
 }
 
 .card {
@@ -503,6 +516,8 @@ footer .social a:hover {
   main {
     margin-top: var(--header-height);
   }
+
+
 
   .section {
     padding: 10rem 0;
